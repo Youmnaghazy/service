@@ -1,0 +1,17 @@
+<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+@for(product of mainList ; track $index){
+    <div class="md:col-span-1">
+    <div class="inner">
+      <img [src]="product.imageCover" class="w-full" alt="product">
+       <div class="caption">
+        <h3>title:{{product.title}}</h3>
+        <h3>price: {{product.price}}</h3>
+        <p>onsale :{{product.onSale}}</p>
+       </div>
+    </div>
+
+  </div>
+
+
+}
+</div>

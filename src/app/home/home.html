@@ -1,0 +1,47 @@
+
+<div class="w-7xl mx-auto px-4 py-20">
+  <app-mybtn [receivedUserName]="userName" >
+
+  </app-mybtn>
+<app-product [mainList]="productList"></app-product>
+<hr>
+
+
+</div>
+<p >{{userName}}</p>
+  <h2 #myEl>recommended product</h2>
+  <button (click)="sayHi(myEl)" class="border-2 border-red-500 p-12">OK</button>
+
+<!-- @if(userRole=='admin'){
+  <h2>your role is admin</h2>
+}
+@else if (userRole=='superAdmin') {
+  <h2>your role is super admin</h2>
+}
+@else if (userRole=='user') {
+  <h2>your role is user</h2>
+}
+@else {
+  <h2>no role assigned for this acc</h2>
+} -->
+
+<!-- @switch (userRole){
+  @case('user'){
+    <h2>your role is user</h2>
+  }
+  @case('admin'){
+        <h2>your role is admin</h2>
+
+  }
+  @case('superAdmin'){
+        <h2>your role is super admin</h2>
+  }
+  @default {
+    <h2>your role is not assign</h2>
+  }
+} -->
+<!-- directives -->
+<!--
+<div *ngIf="" user==="admin" ; ngIfElse="">
+
+</div> -->
