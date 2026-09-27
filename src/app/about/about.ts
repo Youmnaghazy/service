@@ -1,6 +1,7 @@
-import { Component, ElementRef, ViewChild, viewChild } from '@angular/core';
+import { Component, ElementRef, inject, OnInit, ViewChild, viewChild } from '@angular/core';
 import { Alert } from '../alert/alert';
 import { Mybtn } from '../mybtn/mybtn';
+import { DataService } from '../services/data-service/data-service';
 
 @Component({
   selector: 'app-about',
@@ -8,14 +9,18 @@ import { Mybtn } from '../mybtn/mybtn';
   templateUrl: './about.html',
   styleUrl: './about.css',
 })
-export class About {
+export class About implements OnInit {
+friends:string[]=[]
+private readonly data=inject(DataService)
 
-  @ViewChild('Myel') myelement!:ElementRef;
-
-  sayHi(){
-    console.log(this.myelement.nativeElement);
-    this.myelement.nativeElement.classList.add('bg-red-600')
-    
-  }
+constructor(){
+  this.friends=this.data.friendsList
 }
+
+ngOnInit(): void {
+  this.data.friendsList.pop()
+}
+
+}
+
 

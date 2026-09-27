@@ -1,17 +1,22 @@
+<div class="text-center pt-20">
+<h2>Your Products</h2>
+</div>
 <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
-@for(product of mainList ; track $index){
-    <div class="md:col-span-1">
-    <div class="inner">
-      <img [src]="product.imageCover" class="w-full" alt="product">
+
+@for(product of productList; track $index){
+      <div class="md:col-span-1">
+    <div class="inner shadow-xl shadow-gray-500 p-5 m-4">
+      <img [src]="product.image" [alt]="product.category" class="w-full h-60">
        <div class="caption">
-        <h3>title:{{product.title}}</h3>
-        <h3>price: {{product.price}}</h3>
-        <p>onsale :{{product.onSale}}</p>
+        <h3>title : {{product.title.split(' ',1).join(' ')}}</h3>
+        <h3>desc : {{product.description.split(' ',3).join(' ')}}</h3>
+        <p class="text-red-500">price : {{product.price}}</p>
        </div>
     </div>
 
   </div>
 
-
 }
+
+
 </div>
