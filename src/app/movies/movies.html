@@ -1,0 +1,23 @@
+<div class="text-center pt-20">
+<h2>Your Movies</h2>
+</div>
+<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+
+@for(movie of moviesList.slice(0,10); track $index){
+      <div class="md:col-span-1">
+    <div class="inner shadow-xl shadow-gray-500 p-5 m-4">
+      <img [src]="'https://image.tmdb.org/t/p/w500' +movie.poster_path" [alt]="movie.original_title" class="w-full h-90">
+       <div class="caption">
+        <h3>title :{{movie.title ? movie.title : movie.name}} </h3>
+        <h3>Overview : {{movie.overview.split(' ' ,2).join(' ')}}</h3>
+        <p class="text-red-500">Video : {{movie.video ? movie.video :movie.softcore}}</p>
+       </div>
+    </div>
+
+
+  </div>
+
+}
+
+
+</div>

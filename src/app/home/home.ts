@@ -3,28 +3,19 @@ import { RecommendedProduct } from '../recommended-product/recommended-product';
 import { Alert } from '../alert/alert';
 import { Mybtn } from '../mybtn/mybtn';
 import { Product } from '../product/product';
-import { log } from 'console';
-import { DataService } from '../services/data-service/data-service';
-import { Observable } from 'rxjs';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {provideNativeDateAdapter} from '@angular/material/core';
 @Component({
   selector: 'app-home',
-  imports: [RecommendedProduct, Alert, Mybtn, Product],
+  imports: [RecommendedProduct, Alert, Mybtn, Product,MatFormFieldModule, MatInputModule, MatDatepickerModule],
   templateUrl: './home.html',
   styleUrl: './home.css',
+  providers: [provideNativeDateAdapter()],
+
 })
 export class Home  {
-
-constructor(){
-  let x = new Observable(()=>{
-    console.log('yes obs');
-
-  })
-  x.subscribe()
-}
-
-
-
-
 
   sayHi(element:HTMLHeadingElement){
    element.classList.add('bg-red-500')

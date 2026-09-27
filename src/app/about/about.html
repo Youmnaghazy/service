@@ -1,7 +1,6 @@
 <section class="py-20">
-  @for(friend of friends; track $index){
-    <ul>
-      <li>{{friend}}</li>
-    </ul>
-  }
-</section>
+  <h2>UserName: {{userName}} </h2>
+  <p>count : {{count}}</p>
+  <button (click)="changeName()" class="bg-black cursor-pointer text-red-500 border-2 border-white">Change Name</button>
+  <button (click)="changeCount()" class="bg-green-500 cursor-pointer text-red-500 border-2 border-white">Change count</button>
+  </section>

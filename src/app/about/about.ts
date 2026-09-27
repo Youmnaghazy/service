@@ -11,16 +11,25 @@ import { DataService } from '../services/data-service/data-service';
 })
 export class About implements OnInit {
 friends:string[]=[]
+userName:string='Yomna'
+count:number=0
 private readonly data=inject(DataService)
 
 constructor(){
   this.friends=this.data.friendsList
 }
 
+
 ngOnInit(): void {
   this.data.friendsList.pop()
 }
 
+changeName(){
+  this.userName='Nada'
+}
+changeCount(){
+  this.count+=1
+}
 }
 
 

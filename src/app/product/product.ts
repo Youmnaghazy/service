@@ -10,7 +10,9 @@ import { IProduct } from '../iproduct';
 })
 export class Product implements OnInit {
   productList:IProduct[]=[];
+
 private readonly productService=inject(ProductService)
+
 ngOnInit(): void {
   this.productService.getProducts().subscribe({
     next:(res)=>{
